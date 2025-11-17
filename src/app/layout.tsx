@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mukitverse - Next.js Developer Portfolio",
-  description: "Portfolio of a Next.js Developer crafting high-performance, modern web apps with clean UI & better UX.",
+  title: "Pavith Kavisika - Senior Software Engineer Portfolio",
+  description: "Portfolio of Pavith Kavisika, a Senior Software Engineer specializing in building scalable web applications with modern JavaScript frameworks.",
 };
 
 export default function RootLayout({

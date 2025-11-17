@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --primary-blue: #3b82f6;
-  --primary-cyan: #06b6d4;
-  --accent-green: #10b981;
+  --background: #000000;
+  --foreground: #EFECE3;
+  --lime-green: #8EFF00;
+  --cream: #EFECE3;
+  --black: #000000;
 }
 
 @theme inline {
@@ -32,21 +32,21 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: #8EFF00;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #7AE600;
 }
 
 /* Animated gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, #3b82f6, #06b6d4, #10b981);
+  background: linear-gradient(90deg, #8EFF00, #EFECE3, #8EFF00);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,12 +67,12 @@ html {
 }
 
 /* Glow effect */
-.glow-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+.glow-lime {
+  box-shadow: 0 0 20px rgba(142, 255, 0, 0.5);
 }
 
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+.glow-cream {
+  box-shadow: 0 0 20px rgba(239, 236, 227, 0.3);
 }
 
 /* Electric wave animation */
