@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pavith Kavisika - Senior Software Engineer Portfolio",
+  title: "Pavith Kavisika - Portfolio",
   description: "Portfolio of Pavith Kavisika, a Senior Software Engineer specializing in building scalable web applications with modern JavaScript frameworks.",
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
