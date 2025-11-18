@@ -135,25 +135,25 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Additional Competencies */}
+        {/* Core Competencies */}
         <div className="mt-16 p-8 bg-black border border-[#EFECE3]/20 rounded-lg">
           <h3 className="text-2xl font-bold text-[#8EFF00] mb-6 text-center">Core Competencies</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
-              <h4 className="font-semibold text-[#EFECE3] mb-2">Architecture</h4>
-              <p className="text-sm text-[#EFECE3]/70">Microservices, REST APIs, GraphQL</p>
+              <h4 className="font-semibold text-[#EFECE3] mb-2">Full-Stack Development</h4>
+              <p className="text-sm text-[#EFECE3]/70">MERN Stack, REST APIs, JWT Authentication</p>
             </div>
             <div className="text-center">
-              <h4 className="font-semibold text-[#EFECE3] mb-2">Performance</h4>
-              <p className="text-sm text-[#EFECE3]/70">Optimization, Caching, CDN</p>
+              <h4 className="font-semibold text-[#EFECE3] mb-2">Database Management</h4>
+              <p className="text-sm text-[#EFECE3]/70">MySQL, MongoDB, PostgreSQL</p>
             </div>
             <div className="text-center">
-              <h4 className="font-semibold text-[#EFECE3] mb-2">Testing</h4>
-              <p className="text-sm text-[#EFECE3]/70">Unit, Integration, E2E Testing</p>
+              <h4 className="font-semibold text-[#EFECE3] mb-2">Development Tools</h4>
+              <p className="text-sm text-[#EFECE3]/70">Git/GitHub, Docker, Postman, VS Code</p>
             </div>
             <div className="text-center">
-              <h4 className="font-semibold text-[#EFECE3] mb-2">Agile</h4>
-              <p className="text-sm text-[#EFECE3]/70">Scrum, Kanban, CI/CD</p>
+              <h4 className="font-semibold text-[#EFECE3] mb-2">Web Technologies</h4>
+              <p className="text-sm text-[#EFECE3]/70">React, Node.js, Express, Responsive Design</p>
             </div>
           </div>
         </div>

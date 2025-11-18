@@ -51,12 +51,6 @@ export default function Contact() {
     }
   ];
 
-  const availability = {
-    status: "Available for new projects",
-    responseTime: "Within 24 hours",
-    timezone: "GMT+5.5 (Sri Lanka)"
-  };
-
   return (
     <section id="contact" className="relative min-h-screen bg-black py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -74,23 +68,6 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Side - Contact Information */}
           <div className="space-y-8">
-            {/* Availability Status */}
-            <div className="p-6 bg-black border border-[#8EFF00]/30 rounded-lg">
-              <h3 className="text-xl font-semibold text-[#8EFF00] mb-4">Current Availability</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-[#8EFF00] rounded-full animate-pulse"></div>
-                  <span className="text-[#EFECE3] font-medium">{availability.status}</span>
-                </div>
-                <div className="text-sm text-[#EFECE3]/70">
-                  Response time: {availability.responseTime}
-                </div>
-                <div className="text-sm text-[#EFECE3]/70">
-                  Timezone: {availability.timezone}
-                </div>
-              </div>
-            </div>
-
             {/* Contact Methods */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-[#8EFF00] mb-4">Get In Touch</h3>
@@ -112,29 +89,6 @@ export default function Contact() {
                   <p className="text-[#EFECE3]/70 text-sm">{method.description}</p>
                 </a>
               ))}
-            </div>
-
-            {/* What to Expect */}
-            <div className="p-6 bg-black border border-[#EFECE3]/20 rounded-lg">
-              <h3 className="text-xl font-semibold text-[#8EFF00] mb-4">What to Expect</h3>
-              <ul className="space-y-3 text-[#EFECE3]/80">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
-                  Initial consultation to understand your project requirements
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
-                  Detailed project proposal with timeline and deliverables
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
-                  Regular updates and transparent communication throughout
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
-                  Quality assurance and post-launch support
-                </li>
-              </ul>
             </div>
           </div>
 

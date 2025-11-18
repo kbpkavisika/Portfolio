@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="text-xl font-bold gradient-text">Pavith Kavisika</span>
             </div>
             <p className="text-[#EFECE3]/70 text-sm">
-              Crafting digital experiences that users love with clean code and thoughtful design.
+              Building innovative software solutions with clean architecture and user-centric design.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#EFECE3]/20 text-center">
           <p className="text-[#EFECE3]/70 text-sm">
-            &copy; {new Date().getFullYear()} Pavith Kavisika. Crafted with ❤️ using Next.js
+            © {new Date().getFullYear()} Pavith Kavisika. Crafted with precision using Next.js
           </p>
         </div>
       </div>

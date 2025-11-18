@@ -13,7 +13,7 @@ export default function Hero() {
         {/* Profile Photo */}
         <div className="shrink-0 mx-4 lg:mx-8">
           <Image
-            src="/photo.jpg"
+            src="/dp.jpg"
             alt="Pavith Kavisika"
             width={350}
             height={350}
@@ -33,16 +33,16 @@ export default function Hero() {
           {/* Key Metrics */}
           <div className="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto lg:mx-0">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2">5+</div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Experience</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2">1+</div>
+              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Studying</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2">50+</div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Delivered</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2">6+</div>
+              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Built</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2">15+</div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Technologies</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2">10+</div>
+              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Skills Learned</div>
             </div>
           </div>
 

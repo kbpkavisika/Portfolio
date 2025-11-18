@@ -1,11 +1,11 @@
 export default function About() {
   const expertise = [
-    "Full-Stack Development",
-    "React & Next.js",
-    "Node.js & Express",
+    "MERN Stack Development",
+    "REST API Development",
     "Database Design",
-    "API Development",
-    "Cloud Architecture"
+    "Web Application Development",
+    "Authentication Systems",
+    "Frontend Development"
   ];
 
   return (
@@ -24,20 +24,20 @@ export default function About() {
           <div className="space-y-8">
             <div>
               <h3 className="text-3xl md:text-4xl font-bold text-[#EFECE3] mb-4">
-                Software Engineer &
-                <span className="text-[#8EFF00] block">Problem Solver</span>
+                Software Engineering
+                <span className="text-[#8EFF00] block">Undergraduate</span>
               </h3>
               
               <p className="text-[#EFECE3]/80 text-lg leading-relaxed mb-6">
-                I'm a motivated Software Engineering undergraduate at SLIIT with a strong interest in developing 
-                innovative software solutions that address real-world needs. I'm passionate about designing 
-                user-focused digital experiences while continuously learning new technologies.
+                Motivated Software Engineering undergraduate at SLIIT with a proven track record in hackathons 
+                and real-world projects. Passionate about developing innovative software solutions that address 
+                real-world needs, from disaster management platforms to fitness management systems.
               </p>
               
               <p className="text-[#EFECE3]/80 text-lg leading-relaxed">
-                Known for adaptability, problem-solving skills, and delivering reliable results in team-based projects. 
-                I combine technical expertise with user-centered design principles to create solutions that work 
-                flawlessly and provide exceptional user experiences.
+                Awarded 1st Runners Up in SLIIT Codefest 2025 and reached 3rd round in Tech Triathlon. 
+                Excel in team-based projects, combining technical expertise with user-centered design to 
+                deliver reliable, scalable solutions using modern web technologies.
               </p>
             </div>
 
@@ -59,16 +59,16 @@ export default function About() {
             {/* Professional Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#8EFF00] mb-2">2+</div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Learning</div>
+                <div className="text-3xl font-bold text-[#8EFF00] mb-2">1+</div>
+                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Studying</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#8EFF00] mb-2">5+</div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Completed</div>
+                <div className="text-3xl font-bold text-[#8EFF00] mb-2">6+</div>
+                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Built</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#8EFF00] mb-2">15+</div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Technologies Mastered</div>
+                <div className="text-3xl font-bold text-[#8EFF00] mb-2">10+</div>
+                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Skills Learned</div>
               </div>
             </div>
           </div>
