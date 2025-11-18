@@ -36,31 +36,6 @@ export default function Hero() {
     }
   };
 
-  const metricsVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const metricItemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-4">
       {/* Animated Background Elements */}
@@ -110,7 +85,25 @@ export default function Hero() {
             transition: { duration: 0.3, ease: "easeOut" }
           }}
         >
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            animate={{
+              filter: [
+                "drop-shadow(0 0 15px rgba(142, 255, 0, 0.3))",
+                "drop-shadow(0 0 30px rgba(142, 255, 0, 0.6))",
+                "drop-shadow(0 0 15px rgba(142, 255, 0, 0.3))"
+              ]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            whileHover={{
+              filter: "drop-shadow(0 0 37px rgba(142, 255, 0, 0.75))",
+              transition: { duration: 0.3, ease: "easeOut" }
+            }}
+          >
             <Image
               src="/dp.jpg"
               alt="Pavith Kavisika"
@@ -119,7 +112,7 @@ export default function Hero() {
               className="w-[350px] h-[350px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] aspect-square rounded-full border-4 border-[#8EFF00] shadow-lg shadow-[#8EFF00]/20 transition-all duration-300 hover:border-[#7AE600] hover:shadow-[#8EFF00]/40"
             />
             <div className="absolute inset-0 rounded-full border-2 border-[#8EFF00]/50 shadow-lg shadow-[#8EFF00]/10" />
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Professional Introduction */}
@@ -151,68 +144,6 @@ export default function Hero() {
             Motivated Software Engineering undergraduate with a strong interest in developing innovative software solutions that address real-world needs. Passionate about designing user-focused digital experiences while continuously learning new technologies.
           </motion.p>
 
-          {/* Key Metrics */}
-          <motion.div
-            className="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto lg:mx-0"
-            variants={metricsVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div
-              className="text-center"
-              variants={metricItemVariants}
-            >
-              <motion.div
-                className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.8
-                }}
-              >
-                2+
-              </motion.div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Studying</div>
-            </motion.div>
-
-            <motion.div
-              className="text-center"
-              variants={metricItemVariants}
-            >
-              <motion.div
-                className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.9
-                }}
-              >
-                12+
-              </motion.div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Skills Learned</div>
-            </motion.div>
-
-            <motion.div
-              className="text-center"
-              variants={metricItemVariants}
-            >
-              <motion.div
-                className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1.0
-                }}
-              >
-                15+
-              </motion.div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Built</div>
-            </motion.div>
-          </motion.div>
-
           {/* CTA Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
@@ -221,56 +152,55 @@ export default function Hero() {
           >
             <motion.a
               href="#projects"
-              className="px-8 py-3 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 glow-lime hover:scale-105 relative overflow-hidden"
+              className="group relative px-8 py-4 bg-linear-to-r from-[#8EFF00] to-[#7AE600] text-black font-semibold rounded-xl overflow-hidden shadow-lg shadow-[#8EFF00]/25 transition-all duration-300"
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 25px rgba(142, 255, 0, 0.5)",
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(142, 255, 0, 0.3), 0 0 30px rgba(142, 255, 0, 0.5)",
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
             >
+              <motion.div
+                className="absolute inset-0 bg-linear-to-r from-[#7AE600] to-[#6DD400] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "0%" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              />
               <motion.span
                 className="relative z-10"
-                initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
               >
                 View My Work
               </motion.span>
-              <motion.div
-                className="absolute inset-0 bg-linear-to-r from-[#8EFF00] to-[#7AE600]"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "100%" }}
-                transition={{ duration: 0.6 }}
-              />
             </motion.a>
 
             <motion.a
               href="#contact"
-              className="px-8 py-3 border-2 border-[#8EFF00] text-[#8EFF00] hover:text-[#7AE600] font-semibold rounded-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group"
+              className="group relative px-8 py-4 bg-transparent border-2 border-[#8EFF00] text-[#8EFF00] font-semibold rounded-xl overflow-hidden backdrop-blur-sm transition-all duration-300"
               whileHover={{
-                scale: 1.05,
+                scale: 1.02,
                 borderColor: "#7AE600",
+                boxShadow: "0 10px 30px rgba(142, 255, 0, 0.2)",
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
             >
+              <motion.div
+                className="absolute inset-0 bg-linear-to-r from-[#8EFF00] to-[#7AE600] opacity-0 group-hover:opacity-10"
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              />
               <motion.span
                 className="relative z-10"
-                initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 3, color: "#7AE600" }}
                 transition={{ duration: 0.2 }}
               >
                 Get In Touch
               </motion.span>
-              <motion.div
-                className="absolute inset-0 bg-[#8EFF00] opacity-0 group-hover:opacity-10"
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
-              />
             </motion.a>
           </motion.div>
         </motion.div>

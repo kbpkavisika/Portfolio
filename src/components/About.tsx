@@ -61,28 +61,6 @@ export default function About() {
     }
   };
 
-  const statsVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5
-      }
-    }
-  };
-
-  const statItemVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8
-      }
-    }
-  };
-
   const titleVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
@@ -249,98 +227,6 @@ export default function About() {
                     {skill}
                   </motion.div>
                 ))}
-              </motion.div>
-            </motion.div>
-
-            {/* Professional Stats */}
-            <motion.div
-              className="grid grid-cols-3 gap-6 pt-6"
-              variants={statsVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-            >
-              <motion.div
-                className="text-center"
-                variants={statItemVariants}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div
-                  className="text-3xl font-bold text-[#8EFF00] mb-2"
-                  animate={{
-                    textShadow: [
-                      "0 0 0px rgba(142, 255, 0, 0)",
-                      "0 0 20px rgba(142, 255, 0, 0.5)",
-                      "0 0 0px rgba(142, 255, 0, 0)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 1
-                  }}
-                >
-                  1+
-                </motion.div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Studying</div>
-              </motion.div>
-
-              <motion.div
-                className="text-center"
-                variants={statItemVariants}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div
-                  className="text-3xl font-bold text-[#8EFF00] mb-2"
-                  animate={{
-                    textShadow: [
-                      "0 0 0px rgba(142, 255, 0, 0)",
-                      "0 0 20px rgba(142, 255, 0, 0.5)",
-                      "0 0 0px rgba(142, 255, 0, 0)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 1.5
-                  }}
-                >
-                  6+
-                </motion.div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Built</div>
-              </motion.div>
-
-              <motion.div
-                className="text-center"
-                variants={statItemVariants}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div
-                  className="text-3xl font-bold text-[#8EFF00] mb-2"
-                  animate={{
-                    textShadow: [
-                      "0 0 0px rgba(142, 255, 0, 0)",
-                      "0 0 20px rgba(142, 255, 0, 0.5)",
-                      "0 0 0px rgba(142, 255, 0, 0)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 2
-                  }}
-                >
-                  10+
-                </motion.div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Skills Learned</div>
               </motion.div>
             </motion.div>
           </div>

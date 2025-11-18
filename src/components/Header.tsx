@@ -82,14 +82,20 @@ export default function Header() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-6 py-2 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 glow-lime hover:scale-105"
+              className="group relative px-6 py-2 bg-linear-to-r from-[#8EFF00] to-[#7AE600] text-black font-semibold rounded-xl overflow-hidden shadow-lg shadow-[#8EFF00]/25 transition-all duration-300"
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 25px rgba(142, 255, 0, 0.5)"
+                scale: 1.02,
+                boxShadow: "0 15px 30px rgba(142, 255, 0, 0.3), 0 0 25px rgba(142, 255, 0, 0.4)"
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Let's Talk
+              <motion.div
+                className="absolute inset-0 bg-linear-to-r from-[#7AE600] to-[#6DD400] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "0%" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              />
+              <span className="relative z-10">Let's Talk</span>
             </motion.a>
           </div>
 
@@ -163,7 +169,7 @@ export default function Header() {
                   </a>
                   <a
                     href="#contact"
-                    className="px-6 py-3 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 text-center"
+                    className="px-6 py-3 bg-linear-to-r from-[#8EFF00] to-[#7AE600] text-black font-semibold rounded-xl transition-all duration-300 text-center shadow-lg shadow-[#8EFF00]/25"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Let's Talk

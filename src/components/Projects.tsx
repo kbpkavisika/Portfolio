@@ -337,11 +337,21 @@ export default function Projects() {
                       </motion.a>
                       <motion.a
                         href={project.githubUrl}
-                        className="px-4 py-2 bg-black border border-[#EFECE3] text-[#EFECE3] hover:bg-[#EFECE3] hover:text-black text-sm font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className="group relative px-4 py-2 bg-transparent border-2 border-[#EFECE3] text-[#EFECE3] text-sm font-semibold rounded-xl overflow-hidden backdrop-blur-sm transition-all duration-300"
+                        whileHover={{
+                          scale: 1.02,
+                          borderColor: "#8EFF00",
+                          boxShadow: "0 5px 20px rgba(239, 236, 227, 0.2)"
+                        }}
+                        whileTap={{ scale: 0.98 }}
                       >
-                        GitHub
+                        <motion.div
+                          className="absolute inset-0 bg-linear-to-r from-[#EFECE3] to-[#8EFF00] opacity-0 group-hover:opacity-10"
+                          initial={{ scale: 0 }}
+                          whileHover={{ scale: 1 }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                        />
+                        <span className="relative z-10 group-hover:text-[#8EFF00] transition-colors duration-300">GitHub</span>
                       </motion.a>
                     </div>
                   </motion.div>
@@ -558,26 +568,38 @@ export default function Projects() {
                 >
                   <motion.a
                     href={project.liveUrl}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 glow-lime"
+                    className="group relative inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#8EFF00] to-[#7AE600] text-black font-semibold rounded-xl overflow-hidden shadow-lg shadow-[#8EFF00]/25 transition-all duration-300"
                     whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 0 25px rgba(142, 255, 0, 0.5)"
+                      scale: 1.02,
+                      boxShadow: "0 15px 35px rgba(142, 255, 0, 0.3), 0 0 25px rgba(142, 255, 0, 0.4)"
                     }}
-                    whileTap={{ scale: 0.95 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    View Project
+                    <motion.div
+                      className="absolute inset-0 bg-linear-to-r from-[#7AE600] to-[#6DD400] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "0%" }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    />
+                    <span className="relative z-10">View Project</span>
                   </motion.a>
                   <motion.a
                     href={project.caseStudyUrl}
-                    className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#8EFF00] text-[#8EFF00] hover:bg-[#7AE600] hover:text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+                    className="group relative inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-[#8EFF00] text-[#8EFF00] font-semibold rounded-xl overflow-hidden backdrop-blur-sm transition-all duration-300"
                     whileHover={{
-                      scale: 1.05,
-                      backgroundColor: "#8EFF00",
-                      color: "#000000"
+                      scale: 1.02,
+                      borderColor: "#7AE600",
+                      boxShadow: "0 10px 30px rgba(142, 255, 0, 0.2)"
                     }}
-                    whileTap={{ scale: 0.95 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    Case Study
+                    <motion.div
+                      className="absolute inset-0 bg-linear-to-r from-[#8EFF00] to-[#7AE600] opacity-0 group-hover:opacity-10"
+                      initial={{ scale: 0 }}
+                      whileHover={{ scale: 1 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                    />
+                    <span className="relative z-10 group-hover:text-[#7AE600] transition-colors duration-300">Case Study</span>
                   </motion.a>
                 </motion.div>
               </motion.div>
@@ -615,14 +637,20 @@ export default function Projects() {
           </motion.p>
           <motion.a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 glow-lime hover:scale-105"
+            className="group relative inline-flex items-center gap-2 px-8 py-3 bg-linear-to-r from-[#8EFF00] to-[#7AE600] text-black font-semibold rounded-xl overflow-hidden shadow-lg shadow-[#8EFF00]/25 transition-all duration-300"
             whileHover={{
-              scale: 1.05,
-              boxShadow: "0 0 25px rgba(142, 255, 0, 0.5)"
+              scale: 1.02,
+              boxShadow: "0 20px 40px rgba(142, 255, 0, 0.3), 0 0 30px rgba(142, 255, 0, 0.5)"
             }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
           >
-            Start a Conversation
+            <motion.div
+              className="absolute inset-0 bg-linear-to-r from-[#7AE600] to-[#6DD400] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "0%" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            />
+            <span className="relative z-10">Start a Conversation</span>
           </motion.a>
         </motion.div>
       </div>

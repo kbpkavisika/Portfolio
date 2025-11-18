@@ -1,77 +1,195 @@
 "use client";
 
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { motion, useInView, AnimationGeneratorType } from 'framer-motion';
+import { useRef, useState } from 'react';
+
+type SkillLevel = "Beginner" | "Intermediate" | "Advanced" | "Expert";
+
+interface Skill {
+  name: string;
+  level: SkillLevel;
+  years?: string;
+  color: string;
+}
+
+interface Category {
+  title: string;
+  icon: string;
+  skills: Skill[];
+}
 
 export default function Skills() {
-  const programmingLanguages = [
-    { name: "JavaScript", level: "Advanced", years: "2+" },
-    { name: "Java", level: "Advanced", years: "2+" },
-    { name: "Python", level: "Intermediate", years: "1+" },
-    { name: "C", level: "Intermediate", years: "1+" },
-    { name: "C++", level: "Intermediate", years: "1+" },
-    { name: "PHP", level: "Intermediate", years: "1+" },
-    { name: "TypeScript", level: "Intermediate", years: "1+" },
-    { name: "R", level: "Beginner", years: "1+" }
-  ];
-
-  const webTechnologies = [
-    { name: "React.js", level: "Advanced", years: "2+" },
-    { name: "Node.js", level: "Advanced", years: "2+" },
-    { name: "Express.js", level: "Advanced", years: "2+" },
-    { name: "HTML", level: "Advanced", years: "2+" },
-    { name: "CSS", level: "Advanced", years: "2+" },
-    { name: "SQL", level: "Intermediate", years: "2+" }
-  ];
-
-  const databases = [
-    { name: "MySQL", level: "Intermediate", years: "2+" },
-    { name: "MongoDB", level: "Intermediate", years: "1+" },
-    { name: "PostgreSQL", level: "Intermediate", years: "1+" }
-  ];
-
-  const toolsPlatforms = [
-    { name: "Git/GitHub", level: "Advanced" },
-    { name: "VS Code", level: "Advanced" },
-    { name: "Eclipse", level: "Intermediate" },
-    { name: "Postman", level: "Intermediate" },
-    { name: "Docker", level: "Intermediate" },
-    { name: "Figma", level: "Intermediate" },
-    { name: "Android Studio", level: "Beginner" },
-    { name: "XAMPP", level: "Intermediate" },
-    { name: "Apache Tomcat", level: "Intermediate" }
+  const categories: Category[] = [
+    {
+      title: "Tools & Platforms",
+      icon: "",
+      skills: [
+        { name: "Git/GitHub", level: "Advanced", color: "#8EFF00" },
+        { name: "VS Code", level: "Advanced", color: "#8EFF00" },
+        { name: "Eclipse", level: "Intermediate", color: "#8EFF00" },
+        { name: "Postman", level: "Intermediate", color: "#8EFF00" },
+        { name: "Docker", level: "Intermediate", color: "#8EFF00" },
+        { name: "Figma", level: "Intermediate", color: "#8EFF00" },
+        { name: "Android Studio", level: "Beginner", color: "#8EFF00" },
+        { name: "XAMPP", level: "Intermediate", color: "#8EFF00" },
+        { name: "Apache Tomcat", level: "Intermediate", color: "#8EFF00" }
+      ]
+    },
+    {
+      title: "Programming Languages",
+      icon: "",
+      skills: [
+        { name: "JavaScript", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "Java", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "Python", level: "Intermediate", years: "1+", color: "#8EFF00" },
+        { name: "C", level: "Intermediate", years: "1+", color: "#8EFF00" },
+        { name: "C++", level: "Intermediate", years: "1+", color: "#8EFF00" },
+        { name: "PHP", level: "Intermediate", years: "1+", color: "#8EFF00" },
+        { name: "TypeScript", level: "Intermediate", years: "1+", color: "#8EFF00" },
+        { name: "R", level: "Beginner", years: "1+", color: "#8EFF00" }
+      ]
+    },
+    {
+      title: "Web Technologies",
+      icon: "",
+      skills: [
+        { name: "React.js", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "Node.js", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "Express.js", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "HTML", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "CSS", level: "Advanced", years: "2+", color: "#8EFF00" },
+        { name: "SQL", level: "Intermediate", years: "2+", color: "#8EFF00" }
+      ]
+    },
+    {
+      title: "Databases",
+      icon: "",
+      skills: [
+        { name: "MySQL", level: "Intermediate", years: "2+", color: "#8EFF00" },
+        { name: "MongoDB", level: "Intermediate", years: "1+", color: "#8EFF00" },
+        { name: "PostgreSQL", level: "Intermediate", years: "1+", color: "#8EFF00" }
+      ]
+    }
   ];
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const categoryVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
+        staggerChildren: 0.15,
+        delayChildren: 0.3
       }
     }
   };
 
   const skillCardVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0 }
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+      rotateX: 15,
+      scale: 0.9 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      rotateX: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as AnimationGeneratorType,
+        stiffness: 100,
+        damping: 12
+      }
+    }
   };
 
-  const progressVariants = {
-    hidden: { width: 0 },
-    visible: (level: string) => ({
-      width: level === 'Expert' ? '90%' :
-             level === 'Advanced' ? '75%' :
-             level === 'Intermediate' ? '60%' : '45%'
-    })
+  const getProgressWidth = (level: SkillLevel): string => {
+    switch (level) {
+      case 'Expert': return '90%';
+      case 'Advanced': return '75%';
+      case 'Intermediate': return '60%';
+      case 'Beginner': return '45%';
+      default: return '45%';
+    }
   };
 
-  const AnimatedSkillCard = ({ skill, category, index }: { skill: any, category: string, index: number }) => {
+  const SkillCategory = ({ 
+    category, 
+    delay = 0 
+  }: { 
+    category: Category; 
+    delay?: number;
+  }) => {
+    return (
+      <motion.div
+        className="relative"
+        initial={{ opacity: 0, y: 40, scale: 0.9 }}
+        animate={isInView ? { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1 
+        } : {}}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 12,
+          delay: delay
+        }}
+      >
+        <motion.div
+          className="relative p-6 bg-linear-to-br from-black/80 to-black/40 border border-[#EFECE3]/10 rounded-2xl backdrop-blur-sm overflow-hidden group"
+          whileHover={{
+            y: -4,
+            boxShadow: "0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(142, 255, 0, 0.1)",
+            borderColor: "rgba(142, 255, 0, 0.3)"
+          }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 200, 
+            damping: 15 
+          }}
+        >
+          {/* Animated Background Gradient */}
+          <motion.div
+            className="absolute inset-0 bg-linear-to-br from-[#8EFF00]/5 via-transparent to-[#8EFF00]/10 opacity-0 group-hover:opacity-100"
+            initial={{ scale: 0 }}
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.4, ease: "easeOut" }
+            }}
+          />
+
+          {/* Header */}
+          <motion.div 
+            className="mb-6"
+            initial={{ x: -20, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+            transition={{ delay: delay + 0.2, duration: 0.6 }}
+          >
+            <motion.h3
+              className="text-xl font-bold text-[#8EFF00] group-hover:text-[#7AE600] transition-colors duration-300"
+              whileHover={{ x: 5 }}
+            >
+              {category.title}
+            </motion.h3>
+          </motion.div>
+
+          {/* Skills Grid */}
+          <div className="grid sm:grid-cols-2 gap-3">
+            {category.skills.map((skill, index) => (
+              <SkillCard key={skill.name} skill={skill} index={index} delay={delay} />
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  };
+
+  const SkillCard = ({ skill, index, delay }: { skill: Skill; index: number; delay: number }) => {
     const [isHovered, setIsHovered] = useState(false);
     const cardRef = useRef(null);
     const cardInView = useInView(cardRef, { once: true });
@@ -79,57 +197,110 @@ export default function Skills() {
     return (
       <motion.div
         ref={cardRef}
-        className="p-4 bg-black border border-[#EFECE3]/20 rounded-lg hover:border-[#8EFF00]/50 transition-all duration-300 group cursor-pointer"
-        variants={skillCardVariants}
+        className="relative p-4 bg-black/60 border border-[#EFECE3]/5 rounded-xl hover:border-[#8EFF00]/30 transition-all duration-300 cursor-pointer group overflow-hidden"
+        initial={{ opacity: 0, x: -30 }}
+        animate={cardInView ? { 
+          opacity: 1, 
+          x: 0,
+          transition: { 
+            delay: delay + 0.4 + (index * 0.1),
+            type: "spring",
+            stiffness: 120,
+            damping: 20
+          }
+        } : {}}
         whileHover={{
-          scale: 1.05,
-          borderColor: "rgba(142, 255, 0, 0.5)",
-          boxShadow: "0 0 20px rgba(142, 255, 0, 0.1)"
+          scale: 1.02,
+          y: -2,
+          boxShadow: "0 8px 25px rgba(142, 255, 0, 0.2), 0 0 15px rgba(142, 255, 0, 0.15)"
         }}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
-        <div className="flex justify-between items-start mb-2">
-          <motion.h4
-            className="font-semibold text-[#EFECE3] group-hover:text-[#8EFF00] transition-colors"
-            animate={isHovered ? { x: 5 } : { x: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {skill.name}
-          </motion.h4>
-          {skill.years && (
-            <motion.span
-              className="text-xs text-[#EFECE3]/60 bg-[#8EFF00]/10 px-2 py-1 rounded"
-              animate={isHovered ? {
-                backgroundColor: "rgba(142, 255, 0, 0.2)",
-                scale: 1.1
-              } : {
-                backgroundColor: "rgba(142, 255, 0, 0.1)",
-                scale: 1
-              }}
-              transition={{ duration: 0.3 }}
+        {/* Skill Color Accent */}
+        <motion.div
+          className="absolute left-0 top-0 bottom-0 w-1 rounded-r"
+          style={{ backgroundColor: skill.color }}
+          initial={{ scaleY: 0 }}
+          animate={cardInView ? { 
+            scaleY: 1,
+            transition: { delay: delay + 0.6 + (index * 0.1), duration: 0.4 }
+          } : {}}
+        />
+
+        {/* Animated Background */}
+        <motion.div
+          className="absolute inset-0 bg-linear-to-br from-[#8EFF00]/5 via-transparent to-[#8EFF00]/10 opacity-0 group-hover:opacity-100"
+          initial={{ scale: 0 }}
+          animate={isHovered ? { scale: 1 } : { scale: 0 }}
+          transition={{ duration: 0.3 }}
+        />
+
+        <div className="relative z-10">
+          {/* Header */}
+          <div className="flex justify-between items-start mb-3">
+            <motion.h4
+              className="font-semibold text-[#EFECE3] group-hover:text-[#8EFF00] transition-colors"
+              animate={isHovered ? { x: 3 } : { x: 0 }}
             >
-              {skill.years}
-            </motion.span>
-          )}
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="flex-1 bg-[#EFECE3]/10 rounded-full h-2 overflow-hidden">
-            <motion.div
-              className="bg-[#8EFF00] h-2 rounded-full"
-              variants={progressVariants}
-              initial="hidden"
-              animate={cardInView ? "visible" : "hidden"}
-              custom={skill.level}
-            />
+              {skill.name}
+            </motion.h4>
+            {skill.years && (
+              <motion.span
+                className="text-xs px-2 py-1 bg-[#8EFF00]/10 text-[#8EFF00] rounded-full border border-[#8EFF00]/20"
+                animate={isHovered ? { 
+                  scale: 1.05,
+                  backgroundColor: "rgba(142, 255, 0, 0.15)",
+                  borderColor: "rgba(142, 255, 0, 0.3)"
+                } : { scale: 1 }}
+              >
+                {skill.years}
+              </motion.span>
+            )}
           </div>
-          <motion.span
-            className="text-xs text-[#EFECE3]/70 min-w-[70px]"
-            animate={isHovered ? { color: "#8EFF00" } : { color: "rgba(239, 236, 227, 0.7)" }}
-            transition={{ duration: 0.3 }}
-          >
-            {skill.level}
-          </motion.span>
+
+          {/* Progress Bar */}
+          <div className="flex items-center gap-3">
+            <div className="flex-1 bg-[#EFECE3]/5 rounded-full h-2 overflow-hidden">
+              <motion.div
+                className="h-2 rounded-full relative"
+                style={{ backgroundColor: skill.color }}
+                initial={{ width: 0, opacity: 0 }}
+                animate={cardInView ? {
+                  width: getProgressWidth(skill.level),
+                  opacity: 1,
+                  transition: {
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    delay: delay + 0.5 + (index * 0.1)
+                  }
+                } : {}}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-white/20 rounded-full"
+                  animate={{
+                    x: ['-100%', '100%'],
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: delay + 0.8 + (index * 0.2)
+                  }}
+                />
+              </motion.div>
+            </div>
+            <motion.span
+              className="text-xs text-[#EFECE3]/70 min-w-[70px] font-medium"
+              animate={isHovered ? { 
+                color: "#8EFF00",
+                scale: 1.05 
+              } : {}}
+            >
+              {skill.level}
+            </motion.span>
+          </div>
         </div>
       </motion.div>
     );
@@ -198,121 +369,25 @@ export default function Skills() {
           </motion.p>
         </motion.div>
 
-        {/* Skills Grid */}
+        {/* Skills Categories */}
         <motion.div
-          className="space-y-12"
+          className="grid lg:grid-cols-2 gap-6 mb-16"
           variants={categoryVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {/* Programming Languages */}
-          <motion.div variants={skillCardVariants}>
-            <motion.h3
-              className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center"
-              whileHover={{ x: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.span
-                className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold"
-                whileHover={{
-                  rotate: 360,
-                  scale: 1.1
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                PL
-              </motion.span>
-              Programming Languages
-            </motion.h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {programmingLanguages.map((skill, index) => (
-                <AnimatedSkillCard key={index} skill={skill} category="programming" index={index} />
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Web Technologies */}
-          <motion.div variants={skillCardVariants}>
-            <motion.h3
-              className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center"
-              whileHover={{ x: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.span
-                className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold"
-                whileHover={{
-                  rotate: 360,
-                  scale: 1.1
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                WT
-              </motion.span>
-              Web Technologies
-            </motion.h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {webTechnologies.map((skill, index) => (
-                <AnimatedSkillCard key={index} skill={skill} category="web" index={index} />
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Databases */}
-          <motion.div variants={skillCardVariants}>
-            <motion.h3
-              className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center"
-              whileHover={{ x: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.span
-                className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold"
-                whileHover={{
-                  rotate: 360,
-                  scale: 1.1
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                DB
-              </motion.span>
-              Databases
-            </motion.h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {databases.map((skill, index) => (
-                <AnimatedSkillCard key={index} skill={skill} category="database" index={index} />
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Tools & Platforms */}
-          <motion.div variants={skillCardVariants}>
-            <motion.h3
-              className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center"
-              whileHover={{ x: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.span
-                className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold"
-                whileHover={{
-                  rotate: 360,
-                  scale: 1.1
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                TP
-              </motion.span>
-              Tools & Platforms
-            </motion.h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {toolsPlatforms.map((skill, index) => (
-                <AnimatedSkillCard key={index} skill={skill} category="tools" index={index} />
-              ))}
-            </div>
-          </motion.div>
+          {categories.map((category, index) => (
+            <SkillCategory 
+              key={category.title} 
+              category={category} 
+              delay={index * 0.2} 
+            />
+          ))}
         </motion.div>
 
         {/* Core Competencies */}
         <motion.div
-          className="mt-16 p-8 bg-black border border-[#EFECE3]/20 rounded-lg"
+          className="p-8 bg-black border border-[#EFECE3]/20 rounded-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -329,7 +404,7 @@ export default function Skills() {
             Core Competencies
           </motion.h3>
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
             variants={competencyVariants}
             initial="hidden"
             whileInView="visible"
