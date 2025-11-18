@@ -1,4 +1,5 @@
 import Image from "next/image";
+import logoImage from "../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -8,10 +9,13 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 bg-[#8EFF00] rounded-lg flex items-center justify-center">
-                {/* Fallback to PK text logo until logo.png is added */}
-                <span className="text-black font-bold text-lg">PK</span>
-              </div>
+              <Image 
+                src={logoImage} 
+                alt="PK Logo" 
+                width={40} 
+                height={40} 
+                className="rounded-lg" 
+              />
               <span className="text-xl font-bold gradient-text">Pavith Kavisika</span>
             </div>
             <p className="text-[#EFECE3]/70 text-sm">

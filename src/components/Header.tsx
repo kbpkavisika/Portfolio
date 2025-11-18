@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import logoImage from "../assets/logo.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,11 +23,14 @@ export default function Header() {
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="absolute inset-0 rounded-lg blur-sm opacity-50 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative w-12 h-12 bg-[#8EFF00] rounded-lg flex items-center justify-center">
-                {/* Fallback to PK text logo until logo.png is added */}
-                <span className="text-black font-bold text-lg">PK</span>
-              </div>
+              <div className="absolute inset-0 rounded-lg blur-sm opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <Image 
+                src={logoImage} 
+                alt="PK Logo" 
+                width={48} 
+                height={48} 
+                className="relative z-10 transition-transform group-hover:scale-105 rounded-lg" 
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-[#EFECE3] font-bold text-lg leading-none">Pavith Kavisika</span>
