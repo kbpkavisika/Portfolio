@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from 'framer-motion';
 import logoImage from "../assets/logo.png";
 import linkedinLogo from "../assets/linkedin.jpg";
 import githubLogo from "../assets/git.png";
@@ -7,11 +10,22 @@ import phoneLogo from "../assets/tel.jpg";
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-[#EFECE3]/20 py-12 px-4">
+    <motion.footer
+      className="bg-black border-t border-[#EFECE3]/20 py-12 px-4"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="flex items-center gap-2 mb-4">
               <Image 
                 src={logoImage} 
@@ -25,10 +39,15 @@ export default function Footer() {
             <p className="text-[#EFECE3]/70 text-sm">
               Building innovative software solutions with clean architecture and user-centric design.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <h3 className="text-[#EFECE3] font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
               {["Home", "About", "Projects", "Contact"].map((link) => (
@@ -41,10 +60,15 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Professional Connect */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <h3 className="text-[#EFECE3] font-semibold mb-4">Connect</h3>
             <div className="flex flex-col gap-3">
               {[
@@ -70,16 +94,22 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#EFECE3]/20 text-center">
+        <motion.div
+          className="pt-8 border-t border-[#EFECE3]/20 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
           <p className="text-[#EFECE3]/70 text-sm">
             © {new Date().getFullYear()} Pavith Kavisika. Crafted with precision using Next.js
           </p>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

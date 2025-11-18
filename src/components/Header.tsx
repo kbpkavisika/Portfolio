@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
 import logoImage from "../assets/logo.png";
 
 export default function Header() {
@@ -17,11 +18,20 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-[#EFECE3]/10">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-[#EFECE3]/10"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <nav className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute inset-0 rounded-lg blur-sm opacity-20 group-hover:opacity-40 transition-opacity"></div>
               <Image 
@@ -36,45 +46,61 @@ export default function Header() {
               <span className="text-[#EFECE3] font-bold text-lg leading-none">Pavith Kavisika</span>
             </div>
           </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link, index) => (
+              <motion.div
                 key={link.name}
-                href={link.href}
-                className="text-[#EFECE3]/80 hover:text-[#8EFF00] font-medium transition-all duration-300 relative group py-2"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8EFF00] group-hover:w-full transition-all duration-300"></span>
-              </Link>
+                <Link
+                  href={link.href}
+                  className="text-[#EFECE3]/80 hover:text-[#8EFF00] font-medium transition-all duration-300 relative group py-2"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8EFF00] group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              </motion.div>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a 
+            <motion.a 
               href="/resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-4 py-2 text-[#EFECE3] hover:text-[#8EFF00] font-medium transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Resume
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#contact"
               className="px-6 py-2 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 glow-lime hover:scale-105"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 25px rgba(142, 255, 0, 0.5)"
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               Let's Talk
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-[#EFECE3] p-2 hover:text-[#8EFF00] transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <svg
+            <motion.svg
               className="w-6 h-6"
               fill="none"
               strokeLinecap="round"
@@ -82,51 +108,72 @@ export default function Header() {
               strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              animate={{ rotate: isMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
             >
               {isMenuOpen ? (
                 <path d="M6 18L18 6M6 6l12 12" />
               ) : (
                 <path d="M4 6h16M4 12h16M4 18h16" />
               )}
-            </svg>
-          </button>
+            </motion.svg>
+          </motion.button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-[#EFECE3]/10 pt-4">
-            <div className="space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block text-[#EFECE3]/80 hover:text-[#8EFF00] font-medium transition-colors py-2"
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="md:hidden mt-4 pb-4 border-t border-[#EFECE3]/10 pt-4"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="space-y-4">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block text-[#EFECE3]/80 hover:text-[#8EFF00] font-medium transition-colors py-2"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  className="flex flex-col gap-3 pt-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.4 }}
                 >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="flex flex-col gap-3 pt-4">
-                <a 
-                  href="/resume.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#EFECE3] hover:text-[#8EFF00] font-medium transition-colors py-2"
-                >
-                  Download Resume
-                </a>
-                <a
-                  href="#contact"
-                  className="px-6 py-3 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 text-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Let's Talk
-                </a>
+                  <a 
+                    href="/resume.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#EFECE3] hover:text-[#8EFF00] font-medium transition-colors py-2"
+                  >
+                    Download Resume
+                  </a>
+                  <a
+                    href="#contact"
+                    className="px-6 py-3 bg-[#8EFF00] hover:bg-[#7AE600] text-black font-semibold rounded-lg transition-all duration-300 text-center"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Let's Talk
+                  </a>
+                </motion.div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   );
 }

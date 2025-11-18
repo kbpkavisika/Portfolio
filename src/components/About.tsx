@@ -345,7 +345,9 @@ export default function About() {
             </motion.div>
           </div>
 
-            {/* Education & Achievements */}
+          {/* Right Side - Education & Achievements */}
+          <div className="space-y-8">
+            {/* Education */}
             <motion.div
               className="p-6 bg-black border border-[#EFECE3]/20 rounded-lg"
               variants={itemVariants}
@@ -459,6 +461,7 @@ export default function About() {
                 </motion.div>
               </motion.div>
             </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
