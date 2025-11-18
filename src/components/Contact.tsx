@@ -335,6 +335,7 @@ export default function Contact() {
                       required
                       className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                       placeholder="John Doe"
+                      suppressHydrationWarning
                     />
                   </motion.div>
                   <motion.div
@@ -359,6 +360,7 @@ export default function Contact() {
                       required
                       className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                       placeholder="john@example.com"
+                      suppressHydrationWarning
                     />
                   </motion.div>
                 </div>
@@ -386,6 +388,7 @@ export default function Contact() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                       placeholder="Your Company"
+                      suppressHydrationWarning
                     />
                   </motion.div>
                   <motion.div
@@ -408,6 +411,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
+                      suppressHydrationWarning
                     >
                       <option value="">Select project type</option>
                       <option value="web-application">Web Application</option>
@@ -442,6 +446,7 @@ export default function Contact() {
                     rows={5}
                     className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300 resize-none"
                     placeholder="Please describe your project requirements, timeline, and budget range..."
+                    suppressHydrationWarning
                   />
                 </motion.div>
 
