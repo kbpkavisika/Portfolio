@@ -2,65 +2,137 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "ResQ – National Disaster Platform",
       category: "Full-Stack Application",
-      description: "A comprehensive e-commerce solution built with Next.js and Node.js, featuring user authentication, payment processing, inventory management, and admin dashboard. Supports 10,000+ concurrent users.",
-      image: "/projects/ecommerce.jpg",
-      technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe API", "Redis", "AWS"],
+      description: "A comprehensive disaster response platform that won 1st Runners Up in SLIIT Codefest 2025. Features real-time disaster alerts, SOS requests, and resource allocation with integrated APIs for cross-agency collaboration.",
+      image: "/projects/resq.jpg",
+      technologies: ["Node.js", "Express", "MongoDB", "React", "TypeScript", "Recharts", "JWT", "REST API"],
       features: [
-        "Real-time inventory tracking",
-        "Secure payment processing",
-        "Admin analytics dashboard",
-        "Mobile-responsive design"
+        "Real-time disaster alerts and tracking",
+        "SOS request system with geolocation",
+        "Analytics dashboard with data visualization",
+        "Role-based access control (citizen, responder, admin)",
+        "Integrated APIs (SLUDI, Commercial Bank PayDPI, NDX)"
       ],
       metrics: {
-        users: "10K+",
-        performance: "98% uptime",
-        code: "95% test coverage"
+        achievement: "1st Runners Up",
+        competition: "SLIIT Codefest 2025",
+        impact: "National Scale"
       },
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/disaster-response-sl/national-disaster-platform",
       caseStudyUrl: "#"
     },
     {
       id: 2,
-      title: "Task Management System",
-      category: "SaaS Application",
-      description: "A collaborative project management tool with real-time updates, team collaboration features, and advanced reporting. Built for enterprise-scale teams with role-based access control.",
-      image: "/projects/taskmanager.jpg",
-      technologies: ["React", "Express.js", "MongoDB", "Socket.io", "JWT", "Docker"],
+      title: "Ceylon Smart Citizen",
+      category: "Government Services Platform",
+      description: "A digital governance solution for 20+ citizen services including document requests, multilingual support, and queue reservations. Built during Tech-Triathlon hackathon, reached 3rd round.",
+      image: "/projects/ceylon-smart.jpg",
+      technologies: ["Node.js", "Express", "PostgreSQL", "Redis", "Next.js", "Docker", "JWT"],
       features: [
-        "Real-time collaboration",
-        "Advanced reporting",
-        "Role-based permissions",
-        "API integration"
+        "20+ citizen services integration",
+        "Multilingual support system",
+        "Real-time queue management",
+        "NIC verification and authentication",
+        "Microservices architecture"
       ],
       metrics: {
-        users: "5K+",
-        performance: "< 2s load time",
-        code: "90% test coverage"
+        achievement: "3rd Round",
+        competition: "Tech-Triathlon",
+        services: "20+ Integrated"
+      },
+      liveUrl: "#",
+      githubUrl: "https://github.com/CeylonSmartCitizen",
+      caseStudyUrl: "#"
+    },
+    {
+      id: 3,
+      title: "ZFit – Gym Management System",
+      category: "Full-Stack Application",
+      description: "A comprehensive gym management system with payment processing, member dashboards, and attendance tracking. Currently in development with PayHere integration for secure subscriptions.",
+      image: "/projects/zfit.jpg",
+      technologies: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "PayHere"],
+      features: [
+        "Payment management (subscriptions, invoices, refunds)",
+        "Member dashboards with attendance logs",
+        "Responsive design for all devices",
+        "Secure payment integration with PayHere",
+        "Real-time data management"
+      ],
+      metrics: {
+        status: "In Development",
+        features: "Payment System",
+        tech: "MERN Stack"
+      },
+      liveUrl: "#",
+      githubUrl: "https://github.com/gaindunuhansith/ZFit",
+      caseStudyUrl: "#"
+    },
+    {
+      id: 4,
+      title: "Datathon – Public Service Optimization",
+      category: "Machine Learning Project",
+      description: "Machine learning models for optimizing public service resource allocation. Built predictive models for service times and workforce forecasting using real-world datasets.",
+      image: "/projects/datathon.jpg",
+      technologies: ["Python", "pandas", "scikit-learn", "NumPy", "joblib", "HistGradientBoostingRegressor"],
+      features: [
+        "Service time prediction (R² ~0.85)",
+        "Workforce forecasting with RandomForest",
+        "Automated predictions for 51K+ records",
+        "83% unique data coverage",
+        "Smart resource allocation"
+      ],
+      metrics: {
+        accuracy: "R² ~0.85",
+        dataset: "51K+ Records",
+        coverage: "83% Unique"
       },
       liveUrl: "#",
       githubUrl: "#",
       caseStudyUrl: "#"
     },
     {
-      id: 3,
-      title: "Healthcare Management API",
-      category: "Backend System",
-      description: "RESTful API for healthcare management with patient records, appointment scheduling, and medical history tracking. HIPAA-compliant with advanced security measures.",
-      image: "/projects/healthcare.jpg",
-      technologies: ["Node.js", "Express.js", "PostgreSQL", "JWT", "bcrypt", "Joi"],
+      id: 5,
+      title: "PlayNova – Online Game Store",
+      category: "Web Application",
+      description: "A Java-based online game store with announcement management and MVC architecture. Features full CRUD operations for game releases and secure database connections.",
+      image: "/projects/playnova.jpg",
+      technologies: ["Java", "JSP", "Servlets", "MySQL", "JDBC", "Apache Tomcat", "CSS", "JavaScript"],
       features: [
-        "HIPAA compliance",
-        "Secure data encryption",
-        "Automated backups",
-        "API rate limiting"
+        "Announcement management system",
+        "Full CRUD operations for game releases",
+        "MVC design pattern implementation",
+        "Singleton pattern for database connections",
+        "Scalable architecture"
       ],
       metrics: {
-        users: "50K+",
-        performance: "99.9% uptime",
-        code: "100% test coverage"
+        pattern: "MVC Design",
+        operations: "Full CRUD",
+        security: "Singleton DB"
+      },
+      liveUrl: "#",
+      githubUrl: "https://github.com/gaindunuhansith/playnova",
+      caseStudyUrl: "#"
+    },
+    {
+      id: 6,
+      title: "Cabin.com – Hotel Reservation Platform",
+      category: "Web Application",
+      description: "A secure hotel reservation system built with PHP and MySQL. Features user profiles, booking management, and mobile-responsive design for seamless reservations.",
+      image: "/projects/cabin.jpg",
+      technologies: ["HTML", "CSS", "PHP", "MySQL", "JavaScript"],
+      features: [
+        "Secure user authentication and profiles",
+        "Complete booking management system",
+        "CRUD operations for reservations",
+        "Mobile-friendly responsive design",
+        "Database-driven architecture"
+      ],
+      metrics: {
+        security: "User Auth",
+        operations: "Full CRUD",
+        design: "Responsive"
       },
       liveUrl: "#",
       githubUrl: "#",
@@ -96,7 +168,7 @@ export default function Projects() {
                 index % 2 === 1 ? 'lg:col-start-2' : ''
               }`}>
                 <div className="relative aspect-video rounded-lg overflow-hidden bg-black border border-[#EFECE3]/20 group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#8EFF00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-[#8EFF00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   {/* Placeholder - Replace with actual project screenshots */}
                   <div className="absolute inset-0 flex items-center justify-center text-[#EFECE3]/50">
@@ -107,7 +179,7 @@ export default function Projects() {
                   </div>
                   
                   {/* Project overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <div className="flex gap-3">
                       <a 
                         href={project.liveUrl}
@@ -128,16 +200,16 @@ export default function Projects() {
                 {/* Project Metrics */}
                 <div className="grid grid-cols-3 gap-4 mt-4">
                   <div className="text-center p-3 bg-black border border-[#EFECE3]/20 rounded-lg">
-                    <div className="text-sm font-semibold text-[#8EFF00]">{project.metrics.users}</div>
-                    <div className="text-xs text-[#EFECE3]/70">Users</div>
+                    <div className="text-sm font-semibold text-[#8EFF00]">{project.metrics.achievement || project.metrics.accuracy || project.metrics.status || project.metrics.pattern || project.metrics.security}</div>
+                    <div className="text-xs text-[#EFECE3]/70">{project.metrics.competition ? 'Competition' : project.metrics.dataset ? 'Dataset' : project.metrics.features ? 'Focus' : project.metrics.operations ? 'Operations' : 'Status'}</div>
                   </div>
                   <div className="text-center p-3 bg-black border border-[#EFECE3]/20 rounded-lg">
-                    <div className="text-sm font-semibold text-[#8EFF00]">{project.metrics.performance}</div>
-                    <div className="text-xs text-[#EFECE3]/70">Performance</div>
+                    <div className="text-sm font-semibold text-[#8EFF00]">{project.metrics.competition || project.metrics.coverage || project.metrics.tech || project.metrics.security}</div>
+                    <div className="text-xs text-[#EFECE3]/70">{project.metrics.competition ? 'Result' : project.metrics.coverage ? 'Coverage' : project.metrics.tech ? 'Stack' : 'Security'}</div>
                   </div>
                   <div className="text-center p-3 bg-black border border-[#EFECE3]/20 rounded-lg">
-                    <div className="text-sm font-semibold text-[#8EFF00]">{project.metrics.code}</div>
-                    <div className="text-xs text-[#EFECE3]/70">Test Coverage</div>
+                    <div className="text-sm font-semibold text-[#8EFF00]">{project.metrics.impact || project.metrics.services || project.metrics.accuracy || project.metrics.design}</div>
+                    <div className="text-xs text-[#EFECE3]/70">{project.metrics.impact ? 'Scale' : project.metrics.services ? 'Services' : project.metrics.accuracy ? 'Accuracy' : 'Design'}</div>
                   </div>
                 </div>
               </div>
@@ -170,7 +242,7 @@ export default function Projects() {
                   <ul className="space-y-2">
                     {project.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3 text-[#EFECE3]/80">
-                        <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -202,7 +274,7 @@ export default function Projects() {
                   </a>
                   <a
                     href={project.caseStudyUrl}
-                    className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#EFECE3] text-[#EFECE3] hover:bg-[#EFECE3] hover:text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+                    className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#8EFF00] text-[#8EFF00] hover:bg-[#7AE600] hover:text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105"
                   >
                     Case Study
                   </a>

@@ -29,15 +29,15 @@ export default function About() {
               </h3>
               
               <p className="text-[#EFECE3]/80 text-lg leading-relaxed mb-6">
-                I'm a passionate software engineer with over 5 years of experience in developing 
-                robust, scalable web applications. I specialize in modern JavaScript frameworks 
-                and have a strong background in both frontend and backend technologies.
+                I'm a motivated Software Engineering undergraduate at SLIIT with a strong interest in developing 
+                innovative software solutions that address real-world needs. I'm passionate about designing 
+                user-focused digital experiences while continuously learning new technologies.
               </p>
               
               <p className="text-[#EFECE3]/80 text-lg leading-relaxed">
-                My approach combines technical expertise with user-centered design principles 
-                to create solutions that not only work flawlessly but also provide exceptional 
-                user experiences.
+                Known for adaptability, problem-solving skills, and delivering reliable results in team-based projects. 
+                I combine technical expertise with user-centered design principles to create solutions that work 
+                flawlessly and provide exceptional user experiences.
               </p>
             </div>
 
@@ -59,41 +59,61 @@ export default function About() {
             {/* Professional Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#8EFF00] mb-2">5+</div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Experience</div>
+                <div className="text-3xl font-bold text-[#8EFF00] mb-2">2+</div>
+                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Learning</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#8EFF00] mb-2">50+</div>
+                <div className="text-3xl font-bold text-[#8EFF00] mb-2">5+</div>
                 <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#8EFF00] mb-2">98%</div>
-                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Client Satisfaction</div>
+                <div className="text-3xl font-bold text-[#8EFF00] mb-2">15+</div>
+                <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Technologies Mastered</div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Professional Experience */}
-          <div className="space-y-8">
-            {/* Education & Certifications */}
+            {/* Education & Achievements */}
             <div className="p-6 bg-black border border-[#EFECE3]/20 rounded-lg">
               <h4 className="text-xl font-semibold text-[#8EFF00] mb-4">EDUCATION</h4>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div>
-                  <h5 className="text-[#EFECE3] font-medium">Bachelor of Computer Science</h5>
-                  <p className="text-[#EFECE3]/70 text-sm">University of Technology • 2018-2022</p>
+                  <h5 className="text-[#EFECE3] font-medium">BSc (Hons) in Information Technology</h5>
+                  <p className="text-[#EFECE3]/70 text-sm">Sri Lanka Institute of Information Technology (SLIIT) • <span className="text-white font-bold">Oct 2023 – Present</span></p>
+                  <p className="text-[#EFECE3]/80 text-sm">Specializing in Software Engineering</p>
+                  <p className="text-[#EFECE3]/90 text-xs mt-1">Relevant Coursework: OOP, Web Technologies, DBMS, Networking, Data Structures & Algorithms</p>
                 </div>
                 <div className="pt-3 border-t border-[#EFECE3]/10">
-                  <h6 className="text-[#8EFF00] font-medium mb-2">Certifications</h6>
-                  <ul className="text-sm text-[#EFECE3]/80 space-y-1">
-                    <li>• AWS Certified Developer</li>
-                    <li>• React Professional Certificate</li>
-                    <li>• MongoDB Certified Developer</li>
-                  </ul>
+                  <h5 className="text-[#EFECE3] font-medium">GCE Advanced Level</h5>
+                  <p className="text-[#EFECE3]/70 text-sm">Mahanama College (Colombo) • <span className="text-white font-bold">2022</span></p>
+                </div>
+                <div className="pt-3 border-t border-[#EFECE3]/10">
+                  <h5 className="text-[#EFECE3] font-medium">GCE Ordinary Level</h5>
+                  <p className="text-[#EFECE3]/70 text-sm">Mahanama College (Colombo) • <span className="text-white font-bold">2019</span></p>
                 </div>
               </div>
             </div>
-          </div>
+
+            {/* Achievements */}
+            <div className="p-6 bg-black border border-[#EFECE3]/20 rounded-lg">
+              <h4 className="text-xl font-semibold text-[#8EFF00] mb-4">ACHIEVEMENTS</h4>
+              <div className="space-y-3">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#8EFF00] rounded-full mt-2 shrink-0"></div>
+                  <div>
+                    <h5 className="text-[#EFECE3] font-medium">1st Runners Up – SLIIT Codefest 2025</h5>
+                    <p className="text-[#EFECE3]/70 text-sm">Revivenation Competition</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#8EFF00] rounded-full mt-2 shrink-0"></div>
+                  <div>
+                    <h5 className="text-[#EFECE3] font-medium">3rd Round – Tech Triathlon</h5>
+                    <p className="text-[#EFECE3]/70 text-sm">Organized by Rootcode</p>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </section>

@@ -1,29 +1,40 @@
 export default function Skills() {
-  const frontendTech = [
-    { name: "React", level: "Expert", years: "4+" },
-    { name: "Next.js", level: "Expert", years: "3+" },
-    { name: "TypeScript", level: "Advanced", years: "3+" },
-    { name: "JavaScript", level: "Expert", years: "5+" },
-    { name: "HTML5/CSS3", level: "Expert", years: "5+" },
-    { name: "Tailwind CSS", level: "Advanced", years: "2+" }
+  const programmingLanguages = [
+    { name: "JavaScript", level: "Advanced", years: "2+" },
+    { name: "Java", level: "Advanced", years: "2+" },
+    { name: "Python", level: "Intermediate", years: "1+" },
+    { name: "C", level: "Intermediate", years: "1+" },
+    { name: "C++", level: "Intermediate", years: "1+" },
+    { name: "PHP", level: "Intermediate", years: "1+" },
+    { name: "TypeScript", level: "Intermediate", years: "1+" },
+    { name: "R", level: "Beginner", years: "1+" }
   ];
 
-  const backendTech = [
-    { name: "Node.js", level: "Expert", years: "4+" },
-    { name: "Express.js", level: "Expert", years: "4+" },
-    { name: "Python", level: "Intermediate", years: "2+" },
-    { name: "PostgreSQL", level: "Advanced", years: "3+" },
-    { name: "MongoDB", level: "Advanced", years: "3+" },
-    { name: "Redis", level: "Intermediate", years: "2+" }
+  const webTechnologies = [
+    { name: "React.js", level: "Advanced", years: "2+" },
+    { name: "Node.js", level: "Advanced", years: "2+" },
+    { name: "Express.js", level: "Advanced", years: "2+" },
+    { name: "HTML", level: "Advanced", years: "2+" },
+    { name: "CSS", level: "Advanced", years: "2+" },
+    { name: "SQL", level: "Intermediate", years: "2+" }
   ];
 
-  const devTools = [
-    { name: "Git/GitHub", level: "Expert" },
+  const databases = [
+    { name: "MySQL", level: "Intermediate", years: "2+" },
+    { name: "MongoDB", level: "Intermediate", years: "1+" },
+    { name: "PostgreSQL", level: "Intermediate", years: "1+" }
+  ];
+
+  const toolsPlatforms = [
+    { name: "Git/GitHub", level: "Advanced" },
+    { name: "VS Code", level: "Advanced" },
+    { name: "Eclipse", level: "Intermediate" },
+    { name: "Postman", level: "Intermediate" },
     { name: "Docker", level: "Intermediate" },
-    { name: "AWS", level: "Intermediate" },
-    { name: "Vercel", level: "Advanced" },
-    { name: "Jest", level: "Advanced" },
-    { name: "Webpack", level: "Intermediate" }
+    { name: "Figma", level: "Intermediate" },
+    { name: "Android Studio", level: "Beginner" },
+    { name: "XAMPP", level: "Intermediate" },
+    { name: "Apache Tomcat", level: "Intermediate" }
   ];
 
   const SkillCard = ({ skill, category }: { skill: any, category: string }) => (
@@ -71,40 +82,53 @@ export default function Skills() {
 
         {/* Skills Grid */}
         <div className="space-y-12">
-          {/* Frontend Technologies */}
+          {/* Programming Languages */}
           <div>
             <h3 className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center">
-              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">FE</span>
-              Frontend Development
+              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">PL</span>
+              Programming Languages
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {frontendTech.map((skill, index) => (
-                <SkillCard key={index} skill={skill} category="frontend" />
+              {programmingLanguages.map((skill, index) => (
+                <SkillCard key={index} skill={skill} category="programming" />
               ))}
             </div>
           </div>
 
-          {/* Backend Technologies */}
+          {/* Web Technologies */}
           <div>
             <h3 className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center">
-              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">BE</span>
-              Backend Development
+              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">WT</span>
+              Web Technologies
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {backendTech.map((skill, index) => (
-                <SkillCard key={index} skill={skill} category="backend" />
+              {webTechnologies.map((skill, index) => (
+                <SkillCard key={index} skill={skill} category="web" />
               ))}
             </div>
           </div>
 
-          {/* Development Tools */}
+          {/* Databases */}
           <div>
             <h3 className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center">
-              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">DT</span>
-              Development Tools & DevOps
+              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">DB</span>
+              Databases
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {devTools.map((skill, index) => (
+              {databases.map((skill, index) => (
+                <SkillCard key={index} skill={skill} category="database" />
+              ))}
+            </div>
+          </div>
+
+          {/* Tools & Platforms */}
+          <div>
+            <h3 className="text-2xl font-bold text-[#8EFF00] mb-6 flex items-center">
+              <span className="w-8 h-8 bg-[#8EFF00] rounded mr-3 flex items-center justify-center text-black text-sm font-bold">TP</span>
+              Tools & Platforms
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {toolsPlatforms.map((skill, index) => (
                 <SkillCard key={index} skill={skill} category="tools" />
               ))}
             </div>

@@ -39,23 +39,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Links */}
+          {/* Professional Connect */}
           <div>
             <h3 className="text-[#EFECE3] font-semibold mb-4">Connect</h3>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-3">
               {[
-                { name: "GitHub", icon: "💻" },
-                { name: "LinkedIn", icon: "💼" },
-                { name: "Twitter", icon: "🐦" },
-                { name: "Email", icon: "✉️" }
-              ].map((social) => (
+                { name: "Email", icon: "📧", url: "mailto:kbpkavisika@gmail.com", label: "kbpkavisika@gmail.com" },
+                { name: "Phone", icon: "📞", url: "tel:+94718827129", label: "+94 71 882 7129" },
+                { name: "LinkedIn", icon: "💼", url: "https://linkedin.com/in/pavithkavisika", label: "LinkedIn Profile" },
+                { name: "GitHub", icon: "🐙", url: "https://github.com/kbpkavisika", label: "GitHub Profile" }
+              ].map((connect) => (
                 <a
-                  key={social.name}
-                  href="#"
-                  className="w-10 h-10 bg-black border border-[#EFECE3]/30 hover:bg-[#8EFF00] hover:border-[#8EFF00] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-                  title={social.name}
+                  key={connect.name}
+                  href={connect.url}
+                  className="flex items-center gap-3 text-[#EFECE3]/70 hover:text-[#8EFF00] transition-colors text-sm group"
+                  title={connect.label}
                 >
-                  <span className="text-lg text-[#EFECE3] group-hover:text-black">{social.icon}</span>
+                  <span className="text-lg group-hover:scale-110 transition-transform">{connect.icon}</span>
+                  <span className="group-hover:translate-x-1 transition-transform">{connect.label}</span>
                 </a>
               ))}
             </div>

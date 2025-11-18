@@ -27,28 +27,34 @@ export default function Contact() {
   const contactMethods = [
     {
       title: "Email",
-      value: "pavith.kavisika@example.com",
+      value: "kbpkavisika@gmail.com",
       description: "Best for detailed project discussions",
-      link: "mailto:pavith.kavisika@example.com"
+      link: "mailto:kbpkavisika@gmail.com"
+    },
+    {
+      title: "Phone",
+      value: "+94 71 882 7129",
+      description: "For urgent project discussions",
+      link: "tel:+94718827129"
     },
     {
       title: "LinkedIn",
-      value: "/in/pavithkavisika",
+      value: "Pavith Kavisika",
       description: "Professional networking and opportunities",
       link: "https://linkedin.com/in/pavithkavisika"
     },
     {
-      title: "Phone",
-      value: "+880 17XX-XXXX",
-      description: "For urgent project discussions",
-      link: "tel:+8801700000000"
+      title: "GitHub",
+      value: "kbpkavisika",
+      description: "View my code repositories and contributions",
+      link: "https://github.com/kbpkavisika"
     }
   ];
 
   const availability = {
     status: "Available for new projects",
     responseTime: "Within 24 hours",
-    timezone: "GMT+6 (Dhaka)"
+    timezone: "GMT+5.5 (Sri Lanka)"
   };
 
   return (
@@ -113,19 +119,19 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-[#8EFF00] mb-4">What to Expect</h3>
               <ul className="space-y-3 text-[#EFECE3]/80">
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
                   Initial consultation to understand your project requirements
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
                   Detailed project proposal with timeline and deliverables
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
                   Regular updates and transparent communication throughout
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-[#8EFF00] rounded-full mt-2 shrink-0"></span>
                   Quality assurance and post-launch support
                 </li>
               </ul>

@@ -27,8 +27,7 @@ export default function Hero() {
             <span className="gradient-text">PAVITH KAVISIKA</span>
           </h1>
           <p className="text-lg md:text-xl text-[#EFECE3]/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-            Specialized in building scalable web applications with modern JavaScript frameworks.
-            Passionate about clean code, performance optimization, and delivering exceptional user experiences.
+            Motivated Software Engineering undergraduate with a strong interest in developing innovative software solutions that address real-world needs. Passionate about designing user-focused digital experiences while continuously learning new technologies.
           </p>
 
           {/* Key Metrics */}
