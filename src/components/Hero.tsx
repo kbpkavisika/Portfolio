@@ -161,10 +161,6 @@ export default function Hero() {
             <motion.div
               className="text-center"
               variants={metricItemVariants}
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.3 }
-              }}
             >
               <motion.div
                 className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2"
@@ -175,7 +171,7 @@ export default function Hero() {
                   delay: 0.8
                 }}
               >
-                1+
+                2+
               </motion.div>
               <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Years Studying</div>
             </motion.div>
@@ -183,10 +179,6 @@ export default function Hero() {
             <motion.div
               className="text-center"
               variants={metricItemVariants}
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.3 }
-              }}
             >
               <motion.div
                 className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2"
@@ -197,18 +189,14 @@ export default function Hero() {
                   delay: 0.9
                 }}
               >
-                6+
+                12+
               </motion.div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Built</div>
+              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Skills Learned</div>
             </motion.div>
 
             <motion.div
               className="text-center"
               variants={metricItemVariants}
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.3 }
-              }}
             >
               <motion.div
                 className="text-3xl md:text-4xl font-bold text-[#8EFF00] mb-2"
@@ -219,9 +207,9 @@ export default function Hero() {
                   delay: 1.0
                 }}
               >
-                10+
+                15+
               </motion.div>
-              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Skills Learned</div>
+              <div className="text-sm text-[#EFECE3]/70 uppercase tracking-wide">Projects Built</div>
             </motion.div>
           </motion.div>
 

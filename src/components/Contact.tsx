@@ -326,21 +326,15 @@ export default function Contact() {
                     >
                       Full Name *
                     </motion.label>
-                    <motion.input
+                    <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] transition-colors"
+                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                       placeholder="John Doe"
-                      whileFocus={{
-                        scale: 1.02,
-                        borderColor: "#8EFF00",
-                        boxShadow: "0 0 10px rgba(142, 255, 0, 0.2)"
-                      }}
-                      transition={{ duration: 0.3 }}
                     />
                   </motion.div>
                   <motion.div
@@ -356,21 +350,15 @@ export default function Contact() {
                     >
                       Email Address *
                     </motion.label>
-                    <motion.input
+                    <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] transition-colors"
+                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                       placeholder="john@example.com"
-                      whileFocus={{
-                        scale: 1.02,
-                        borderColor: "#8EFF00",
-                        boxShadow: "0 0 10px rgba(142, 255, 0, 0.2)"
-                      }}
-                      transition={{ duration: 0.3 }}
                     />
                   </motion.div>
                 </div>
@@ -390,20 +378,14 @@ export default function Contact() {
                     >
                       Company/Organization
                     </motion.label>
-                    <motion.input
+                    <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] transition-colors"
+                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                       placeholder="Your Company"
-                      whileFocus={{
-                        scale: 1.02,
-                        borderColor: "#8EFF00",
-                        boxShadow: "0 0 10px rgba(142, 255, 0, 0.2)"
-                      }}
-                      transition={{ duration: 0.3 }}
                     />
                   </motion.div>
                   <motion.div
@@ -419,19 +401,13 @@ export default function Contact() {
                     >
                       Project Type *
                     </motion.label>
-                    <motion.select
+                    <select
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] focus:outline-none focus:border-[#8EFF00] transition-colors"
-                      whileFocus={{
-                        scale: 1.02,
-                        borderColor: "#8EFF00",
-                        boxShadow: "0 0 10px rgba(142, 255, 0, 0.2)"
-                      }}
-                      transition={{ duration: 0.3 }}
+                      className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300"
                     >
                       <option value="">Select project type</option>
                       <option value="web-application">Web Application</option>
@@ -439,7 +415,7 @@ export default function Contact() {
                       <option value="api-development">API Development</option>
                       <option value="consultation">Technical Consultation</option>
                       <option value="other">Other</option>
-                    </motion.select>
+                    </select>
                   </motion.div>
                 </div>
 
@@ -457,21 +433,15 @@ export default function Contact() {
                   >
                     Project Details *
                   </motion.label>
-                  <motion.textarea
+                  <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-black border border-[#EFECE3]/30 rounded-lg text-[#EFECE3] placeholder-[#EFECE3]/50 focus:outline-none focus:border-[#8EFF00] focus:ring-2 focus:ring-[#8EFF00]/20 transition-all duration-300 resize-none"
                     placeholder="Please describe your project requirements, timeline, and budget range..."
-                    whileFocus={{
-                      scale: 1.02,
-                      borderColor: "#8EFF00",
-                      boxShadow: "0 0 10px rgba(142, 255, 0, 0.2)"
-                    }}
-                    transition={{ duration: 0.3 }}
                   />
                 </motion.div>
 
