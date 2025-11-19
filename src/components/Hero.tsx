@@ -19,19 +19,19 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        duration: 1.5,
-        staggerChildren: 0.3
+        duration: 1.2,
+        staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.2
+        duration: 0.8
       }
     }
   };
@@ -41,7 +41,7 @@ export default function Hero() {
       {/* Animated Background Elements */}
       <motion.div
         className="absolute inset-0 opacity-10"
-        style={{ y: backgroundY }}
+        style={{ y: backgroundY, willChange: 'transform' }}
       >
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8EFF00] rounded-full filter blur-[120px]"
@@ -103,6 +103,7 @@ export default function Hero() {
               filter: "drop-shadow(0 0 37px rgba(142, 255, 0, 0.75))",
               transition: { duration: 0.3, ease: "easeOut" }
             }}
+            style={{ willChange: 'filter' }}
           >
             <Image
               src="/dp.jpg"
@@ -118,7 +119,7 @@ export default function Hero() {
         {/* Professional Introduction */}
         <motion.div
           className="flex-1 text-center lg:text-left"
-          style={{ y: textY }}
+          style={{ y: textY, willChange: 'transform' }}
         >
           <motion.h1
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-[#EFECE3]"
